@@ -23,7 +23,7 @@ var strStr = function(haystack, needle) {
         // 当当前字符不匹配时，沿着 next 数组往前回退（寻找更短的可能匹配前缀）
         while (j > 0 && needle[i] !== needle[j]) {
             // 退到上一个最长相同前后缀的位置
-            j = next[j - 1];
+            j = next[j - 1]; // 回退到上一个位置，这个位置的值就告诉我们下一个可能的匹配前缀长度
         }
         // 如果当前字符和前缀的下一个字符匹配，前缀长度加一
         if (needle[i] === needle[j]) {
